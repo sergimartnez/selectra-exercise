@@ -9,6 +9,11 @@
   </head>
 
   <body>
+    <header>
+      <% if user_signed_in? %>
+        <%= render "users/header-loggedin" %>
+      <% end %>
+    </header>
     <%= yield %>
   </body>
 </html>

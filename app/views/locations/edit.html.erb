@@ -1,0 +1,17 @@
+<%= form_for @location, url: locations_path, method: 'PUT' do |f| %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name, autofocus: true %>
+  </div>
+  <div class="field">
+    <%= f.label :opening_time %><br />
+    <%= f.text_field :opening_time, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :closing_time %><br />
+    <%= f.text_field :closing_time, autofocus: true %>
+  </div>
+  <%= f.button %>
+<% end %>

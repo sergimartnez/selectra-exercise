@@ -18,6 +18,8 @@ ActiveRecord::Schema.define(version: 20170626182227) do
   create_table "locations", force: :cascade do |t|
     t.string "name"
     t.bigint "user_id"
+    t.string "opening_time"
+    t.string "closing_time"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_locations_on_user_id"

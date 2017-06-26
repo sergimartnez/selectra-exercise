@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="row">
+    <a href="/locations/new">Create Location</a>
+  </div>
+  <div class="row">
+    <div class="col-sm-3">
+      <h4>Email</h4>
+    </div>
+    <div class="col-sm-3">
+      <h4>Name</h4>
+    </div>
+    <div class="col-sm-3">
+      <h4>Opening Time</h4>
+    </div>
+    <div class="col-sm-3">
+      <h4>Closing Time</h4>
+    </div>
+  </div>
+  <% @locations.each do |location| %>
+    <div class="row">
+      <div class="col-sm-3">
+        <h4><%= location.user.name %></h4>
+      </div>
+      <div class="col-sm-3">
+        <a href="/locations/<%= location.id %>"><h4><%= location.name %></h4></a>
+        <!-- <h4><%= location.name %></h4> -->
+      </div>
+      <div class="col-sm-3">
+        <h4><%= location.opening_time %></h4>
+      </div>
+      <div class="col-sm-3">
+        <h4><%= location.closing_time %></h4>
+      </div>
+    </div>
+  <% end %>
+</div>

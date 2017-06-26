@@ -1,0 +1,23 @@
+<div class="container">
+  <% if current_user == @location.user %> 
+    <div class="row">
+      <a href="/locations/<%= @location.id%>/edit">Edit Location</a>
+    </div>
+  <% end %>
+  <div class="row">
+    <h3>Name</h3>
+    <h4><%= @location.name%></h4>
+  </div>
+  <div class="row">
+    <h3>manager</h3>
+    <h4><%= @location.user.name%></h4>
+  </div>
+  <div class="row">
+    <h3>Opening Time</h3>
+    <h4><%= @location.opening_time%></h4>
+  </div>
+  <div class="row">
+    <h3>Closing Time</h3>
+    <h4><%= @location.closing_time%></h4>
+  </div>
+</div>
