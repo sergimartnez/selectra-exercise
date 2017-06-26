@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   get '/users', to: 'users#index'
   # get '/users/:id', to: 'users#view'
+  post 'location/status', to: 'location#status'
   get '/locations', to: 'locations#index'
   get 'locations/new', to: 'locations#new'
   post '/locations', to: 'locations#create'

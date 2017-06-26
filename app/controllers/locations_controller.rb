@@ -18,6 +18,17 @@ class LocationsController < ApplicationController
     
   end
 
+  def status
+    @location=Location.find_by(id: params[:id])
+    actual_time = Time.now
+
+    if actual_time.hour >= Integer(@location.opening_time.split(":")[0]) && actual_time.hour <= Integer(@location.closing_time.split(":")[0])
+      render json: {status: "Open"}
+    else
+      render json: {status: "Closed"}
+    end
+  end
+
   def create
     @location = Location.new(
       name: params[:location][:name],
